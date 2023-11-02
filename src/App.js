@@ -1,18 +1,15 @@
 import './App.css';
 
 function App() {
+  const displayHelloWorld = () => {
+    alert('Hello, World!');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hello, World!</p> {/* Replace the content here */}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Hello, World!</p>
+        <button onClick={displayHelloWorld}>Show Hello, World</button>
       </header>
     </div>
   );
