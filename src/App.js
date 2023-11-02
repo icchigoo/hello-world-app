@@ -1,15 +1,22 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const username = formData.get('username');
-    const password = formData.get('password');
-    
-    // Replace this with your login logic
-    console.log('Username:', username);
-    console.log('Password:', password);
+    setLoginSuccess(true);
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -20,14 +27,35 @@ function App() {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" id="username" required />
+              <input
+                type="text"
+                name="username"
+                id="username"
+                required
+                value={username}
+                onChange={handleUsernameChange}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" id="password" required />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                required
+                value={password}
+                onChange={handlePasswordChange}
+              />
             </div>
             <button type="submit">Login</button>
           </form>
+          {loginSuccess && (
+            <div className="success-message">
+              <p>Login Success!</p>
+              <p>Username: {username}</p>
+              <p>Password: {password}</p>
+            </div>
+          )}
         </div>
       </header>
     </div>
