@@ -1,15 +1,16 @@
 import React from 'react';
 
 function App() {
-  // Create a function to show an alert
   const showAlert = () => {
     alert("Hello, World!");
   };
 
-  // Create a style object to add color
   const helloStyle = {
     color: 'blue',
     fontSize: '24px',
+    backgroundColor: 'lightgray',  // Add a background color
+    padding: '20px',  // Add some padding
+    borderRadius: '8px',  // Add rounded corners
   };
 
   return (
