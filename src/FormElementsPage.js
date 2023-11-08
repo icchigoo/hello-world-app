@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FormElementsPage.css';
 
 function FormElementsPage() {
   const [textInput, setTextInput] = useState('');
