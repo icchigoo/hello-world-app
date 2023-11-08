@@ -1,56 +1,55 @@
 /* FormElementsPage.css */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  label input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  input[type="submit"],
-  input[type="reset"] {
-    padding: 8px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  input[type="submit"]:hover,
-  input[type="reset"]:hover {
-    background-color: #1e7e34;
-  }
-  
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"],
+input[type="password"],
+input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+label input[type="radio"] {
+  margin-right: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="reset"] {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #0056b3;
+}
+
+/* Checkboxes */
+label input[type="checkbox"] {
+  margin-right: 5px;
+}

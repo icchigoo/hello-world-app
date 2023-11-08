@@ -5,6 +5,11 @@ function FormElementsPage() {
   const [textInput, setTextInput] = useState('');
   const [radioValue, setRadioValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
+  const [checkboxValues, setCheckboxValues] = useState([]);
+  const [textareaValue, setTextareaValue] = useState('');
+  const [fileValue, setFileValue] = useState(null);
+  const [passwordValue, setPasswordValue] = useState('');
+  const [rangeValue, setRangeValue] = useState(50);
 
   const handleTextInputChange = (e) => {
     setTextInput(e.target.value);
@@ -16,6 +21,31 @@ function FormElementsPage() {
 
   const handleSelectChange = (e) => {
     setSelectValue(e.target.value);
+  };
+
+  const handleCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (checkboxValues.includes(value)) {
+      setCheckboxValues(checkboxValues.filter((val) => val !== value));
+    } else {
+      setCheckboxValues([...checkboxValues, value]);
+    }
+  };
+
+  const handleTextareaChange = (e) => {
+    setTextareaValue(e.target.value);
+  };
+
+  const handleFileChange = (e) => {
+    setFileValue(e.target.files[0]);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPasswordValue(e.target.value);
+  };
+
+  const handleRangeChange = (e) => {
+    setRangeValue(e.target.value);
   };
 
   return (
@@ -61,12 +91,57 @@ function FormElementsPage() {
         </select>
       </div>
 
-      {/* Buttons */}
+      {/* Checkboxes */}
       <div>
-        <label>Buttons:</label>
-        <button onClick={() => alert("Button clicked")}>Click Me</button>
-        <input type="submit" value="Submit" />
-        <input type="reset" value="Reset" />
+        <label>Checkboxes:</label>
+        <label>
+          <input
+            type="checkbox"
+            value="Checkbox 1"
+            checked={checkboxValues.includes("Checkbox 1")}
+            onChange={handleCheckboxChange}
+          />
+          Checkbox 1
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="Checkbox 2"
+            checked={checkboxValues.includes("Checkbox 2")}
+            onChange={handleCheckboxChange}
+          />
+          Checkbox 2
+        </label>
+      </div>
+
+      {/* Textarea */}
+      <div>
+        <label>Textarea:</label>
+        <textarea value={textareaValue} onChange={handleTextareaChange}></textarea>
+      </div>
+
+      {/* File Input */}
+      <div>
+        <label>File Input:</label>
+        <input type="file" accept=".jpg, .jpeg, .png" onChange={handleFileChange} />
+      </div>
+
+      {/* Password Input */}
+      <div>
+        <label>Password Input:</label>
+        <input type="password" value={passwordValue} onChange={handlePasswordChange} />
+      </div>
+
+      {/* Range Input */}
+      <div>
+        <label>Range Input:</label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={rangeValue}
+          onChange={handleRangeChange}
+        />
       </div>
     </div>
   );
