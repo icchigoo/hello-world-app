@@ -1,4 +1,5 @@
 import React from 'react';
+import './TablePage.css'; 
 
 function TablePage() {
   // Sample table data
