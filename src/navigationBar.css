@@ -1,0 +1,41 @@
+/* navigationBar.css */
+
+/* Styles for the overall navigation bar container */
+.navbar-container {
+    background-color: #333;
+    padding: 10px;
+}
+
+/* Styles for the list inside the navigation bar */
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display the list items horizontally */
+}
+
+/* Styles for each individual item in the navigation bar */
+.navbar-item {
+    margin-right: 15px; /* Add margin to separate each item */
+}
+
+/* Styles for the navigation bar links */
+.navbar-link {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Set text color to white */
+    font-weight: bold; /* Make the text bold */
+    padding: 8px 12px; /* Add padding around the link text */
+    border-radius: 4px; /* Add rounded corners to the link */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Styles for the hover effect on navigation bar links */
+.navbar-link:hover {
+    background-color: #555; /* Change background color on hover */
+}
+
+/* Styles for a horizontal line to separate sections of the navigation bar */
+.navbar-divider {
+    border: 1px solid #555; /* Add a border with a dark color */
+    margin-top: 10px; /* Add some margin at the top of the divider */
+}
